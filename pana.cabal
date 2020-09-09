@@ -1,0 +1,70 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 96254698c4c3bf0135f87c0598d49ae2730b7cec1bf0a290b8ea29bde0e7d0fa
+
+name:           pana
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/pana#readme>
+homepage:       https://github.com/githubuser/pana#readme
+bug-reports:    https://github.com/githubuser/pana/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/pana
+
+library
+  exposed-modules:
+      Lib
+      Pana
+      Pana.QQ
+  other-modules:
+      Paths_pana
+  hs-source-dirs:
+      src
+  default-extensions: DataKinds FlexibleContexts FlexibleInstances GADTs KindSignatures StandaloneDeriving TemplateHaskell TypeOperators QuasiQuotes
+  build-depends:
+      base >=4.7 && <5
+    , template-haskell
+  default-language: Haskell2010
+
+executable pana-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_pana
+  hs-source-dirs:
+      app
+  default-extensions: DataKinds FlexibleContexts FlexibleInstances GADTs KindSignatures StandaloneDeriving TemplateHaskell TypeOperators QuasiQuotes
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , pana
+    , template-haskell
+  default-language: Haskell2010
+
+test-suite pana-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_pana
+  hs-source-dirs:
+      test
+  default-extensions: DataKinds FlexibleContexts FlexibleInstances GADTs KindSignatures StandaloneDeriving TemplateHaskell TypeOperators QuasiQuotes
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , pana
+    , template-haskell
+  default-language: Haskell2010
