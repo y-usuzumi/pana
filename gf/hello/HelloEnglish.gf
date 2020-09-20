@@ -1,5 +1,5 @@
 concrete HelloEnglish of Hello = {
-  lincat Greeting, Recipient = {s: Str};
+  lincat Greeting, Recipient = {s : Str};
 
   lin
     Hello recip = {s = "hello" ++ recip.s};
